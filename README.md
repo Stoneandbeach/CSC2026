@@ -76,7 +76,7 @@ Suggestions for the exercise:
 
 > Related code: *src/ex0.1_time.cpp*
 
-This exercise has an implementation of a function to sum all the values in a vector. It sets up a vector with length *N*, with value from 0 to *N* - 1, and calcutes the sum.
+This exercise has an implementation of a function to sum all the values in a vector. It sets up a vector with length *N*, with values from 0 to *N* - 1, and calculates the sum.
 
 **Your task is to use the Linux `time` command to time the *build/ex0.1* program.**
 
@@ -159,7 +159,7 @@ Suggestions for the exercise:
 
 Below is a list of hints for the algorithmic complexity exercises. Feel free to use them, or wait with reading them until you feel you need them!
 - Playing with logarithmic scale on the axes of the plots can be a big help.
-- Normalising all the measurement points of a benchmark by the first point, so that the first point is always = 1, can make it easier to see how different algorithms scale. (*p*<sub>0</sub>, *p*<sub>1</sub>, *p*<sub>2</sub> ...) &rarr; (1, *p*<sub>1</sub>/*p*<sub>0</sub>, *p*<sub>2</sub>/*p*<sub>0</sub> ...)
+- Normalising all the measurement points of a benchmark by the first point, so that the first point is always = 1, can make it easier to see how different algorithms scale. (*p*<sub>0</sub>, *p*<sub>1</sub>, *p*<sub>2</sub> ...) &rarr; (1, *p*<sub>1</sub>/*p*<sub>0</sub>, *p*<sub>2</sub>/*p*<sub>0</sub> ...). Remember: we're not primarily interested in absolute runtime. Big O notation talks about scaling!
 - In practice, not every "computational step" is the same. Additionally, there can be different amounts of overhead to different algorithms. This means that two different *O*(*N*) algorithms might not behave the same.
 - You may need quite a large range of values of *N* to get good results, considering the previous point.
 
