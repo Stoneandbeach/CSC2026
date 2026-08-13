@@ -18,4 +18,5 @@ TEST_CASE("Benchmarking Basics") {
         return arithmetic_sum(100);
     };
 
+    REQUIRE(arithmetic_sum(100) == 5050);
 }

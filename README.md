@@ -16,10 +16,10 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_107a/x86_64-el9-gcc13-dbg/setup.sh
     - `cd your_favorite_folder`
 - clone the git repo with the exercise material
 ```
-git clone https://github.com/Stoneandbeach/CSC2025.git
+git clone https://github.com/Stoneandbeach/CSC2026.git
 ```
 - navigate to the folder of the cloned repo
-    - `cd CSC2025`
+    - `cd CSC2026`
 - run CMake to compile the various programs of the exercises
 	- `cmake -B build` (this creates build configuration files in the *build/* directory)
 	- `cmake --build build` (this compiles the programs into executable files in the *build/* directory. **Note:** you'll need to rerun this step each time you've made changes to the code)
@@ -42,7 +42,7 @@ When you run a **Catch2** benchmark, you get some output that might look like th
 
 In orange, you see the mean runtime per iteration, and in purple the standard deviation of the population of runs. Here we see a standard deviation of about 25% of the mean, which is not unexpected; 100 samples is still quite low.
 
-Finally, in blue you see an estimation of how long **Catch2** thinks this benchmark will take to run. You might want to keep an eye on this number if you're running slow benchmarks...
+Finally, in blue you see an estimation of how long **Catch2** thinks this benchmark will take to run per sample. You might want to keep an eye on this number if you're running slow benchmarks...
 
 When looking at this information, remember to be a bit sceptical. Remember variance. If the standard deviation is large, you might want to rerun a few times, or tell Catch2 to use more samples to get more stable results. Add the "--benchmark-samples" flag when running the benchmark:
 - `./your_program --benchmark-samples 500` 
@@ -61,11 +61,13 @@ This is our first look at benchmarking using **Catch2**. It covers how to set up
 
 **BENCHMARK** is another macro that sets up timing code, and then runs and times what you put in the **BENCHMARK** `{ }` braces. Note that to be sure that the compiler does not optimize away the code you are benchmarking, add a `return` statement in the **BENCHMARK** (see *src/ex0.0_benchmarking_basics.cpp* for an example).
 
+**REQUIRE** is a unit test - it requires that the expression in its parentheses evaluates to true, making sure that the code under test produces correct output in some known case.
+
 Suggestions for the exercise:
 - Read through and get familiar with the code.
 - Run *build/ex0.0* and study the results. 
 - Add a couple of **BENCHMARK**s with a different upper limits, recompile the program and run it. Does the runtime change as expected?
-- Implement a function `smarter_arithmetic_sum` that does the arithmetic sum in a more efficient manner. Add a **BENCHMARK** for your smarter function and compare the results to my inefficient version. Was yours faster?
+- Implement a function `smarter_arithmetic_sum` that does the arithmetic sum in a more efficient manner. Add a **BENCHMARK** for your smarter function and compare the results to my inefficient version. Was yours faster? Don't forget to add a unit test for your function as well!
 - Remove the `volatile` keyword from the original smarter_arithmetic sum and rerun. What happens? Why?
 
 > Given that the input to the arithmetic sum is *N*, what algorithmic complexity is your version, and what is mine?
