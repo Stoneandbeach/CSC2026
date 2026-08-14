@@ -42,7 +42,7 @@ When you run a **Catch2** benchmark, you get some output that might look like th
 
 In orange, you see the mean runtime per iteration, and in purple the standard deviation of the population of runs. Here we see a standard deviation of about 25% of the mean, which is not unexpected; 100 samples is still quite low.
 
-Finally, in blue you see an estimation of how long **Catch2** thinks this benchmark will take to run per sample. You might want to keep an eye on this number if you're running slow benchmarks...
+Finally, in blue you see an estimation of how long **Catch2** thinks this benchmark will take to run all in all. You might want to keep an eye on this number if you're running slow benchmarks...
 
 When looking at this information, remember to be a bit sceptical. Remember variance. If the standard deviation is large, you might want to rerun a few times, or tell Catch2 to use more samples to get more stable results. Add the "--benchmark-samples" flag when running the benchmark:
 - `./your_program --benchmark-samples 500` 
