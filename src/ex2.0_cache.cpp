@@ -5,7 +5,7 @@
 
 // Basic parameter setup
 #define SIZE 64 // size of the vector in bytes. If you make it bigger than 2 GB, you might break the code...
-#define STEPS 1000000000 // 10 billion, number of steps of the timing loop
+#define STEPS 1000000000 // 1 billion, number of steps of the timing loop
 
 int main() {
 

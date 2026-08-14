@@ -173,7 +173,7 @@ You've been given a program that behaves in a decidedly cache-unfriendly manner,
 
 `perf stat ./your_program` gathers a default set of statistics on your program, like runtime. There is however a lot more that `perf` can tell you. To get access to L1 cache information, you need to specify that you want to see the "events" related to L1 cache.
 
-`perf stat -e L1-dcache-loads,L1-dcache-load-misses ./your_program` records the number of times data is loaded from L1 cache, and how many times some requested data is not found in L1 cache - i.e. cache hits and misses. Note that L1 cache is actually split into two parts; **dcache**, which is used for data like your vector, and **icache**, used for CPU instructions, i.e. the actual machine code translation of the program you're running. We want to study how well this program uses the **dcache**.
+`perf stat -e L1-dcache-loads,L1-dcache-load-misses ./your_program` records the number of times data is loaded from L1 cache, and how many times some requested data is not found in L1 cache - i.e. cache misses. Note that L1 cache is actually split into two parts; **dcache**, which is used for data like your vector, and **icache**, used for CPU instructions, i.e. the actual machine code translation of the program you're running. We want to study how well this program uses the **dcache**.
 
 To see the full list of statistics that perf can track, run `perf list`. There's a lot! They can however be a bit tricky to figure out what they mean (and they can mean different things on different hardware).
 
@@ -189,3 +189,5 @@ Suggestions for the exercise:
 > The runtime does not follow the same trend as the cache misses. When does it start to change? Why?
 
 **Hint:** once you have your results, you can run `getconf -a | grep CACHE` to see the properties of the cache on your machine.
+
+As always, there are some interesting effects that are beyond the scope of the current exercise, i.e. examining the L1 dcache. Feel free to speculate and discuss. I have some theories of what happens for larger arrays, but not all the answers, so please let me know if you do some exploring!
