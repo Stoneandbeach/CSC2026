@@ -18,7 +18,7 @@ TEST_CASE("Exercise 1.1 - Complexity") {
         // Setup code
         std::vector<int> v(N);
         for (int &element : v) {
-            element = rand() % 100 - 40;
+            element = rand() % 100000 - 40000;
         }
 
         // Benchmarking
