@@ -190,4 +190,8 @@ Suggestions for the exercise:
 
 **Hint:** once you have your results, you can run `getconf -a | grep CACHE` to see the properties of the cache on your machine.
 
-As always, there are some interesting effects that are beyond the scope of the current exercise, i.e. examining the L1 dcache. Feel free to speculate and discuss. I have some theories of what happens for larger arrays, but not all the answers, so please let me know if you do some exploring!
+**NB:**
+- Running the exercise on LXPLUS, perf has access to what it needs from the get-go. However, on other machines, the default might be to disallow access to cache load counters. If you have sudo access, you can run `sudo sysctl kernel.perf_event_paranoid=1` to temporarily change permissions and allow perf to access what it needs. A second alternative is using the benchmarking tool `valgrind`.
+- Some machines have two kinds of CPU cores (P=performance and E=efficiency). These have different clock frequencies, and can have different cache sizes. If you're getting ambiguous results (either from the exercise or from `getconf`), this may be because your processes are jumping between CPU types. Try adding `taskset -c 0` in front of your commands to pin them to CPU 0.
+
+As always, there are some interesting effects that are beyond the scope of the current exercise of examining the L1 dcache. Feel free to speculate and discuss. I have some theories of what happens for larger arrays, but not all the answers, so please let me know if you do some exploring!
