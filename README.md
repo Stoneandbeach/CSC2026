@@ -68,7 +68,7 @@ Suggestions for the exercise:
 - Run *build/ex0.0* and study the results. 
 - Add a couple of **BENCHMARK**s with a different upper limits, recompile the program and run it. Does the runtime change as expected?
 - Implement a function `smarter_arithmetic_sum` that does the arithmetic sum in a more efficient manner. Add a **BENCHMARK** for your smarter function and compare the results to my inefficient version. Was yours faster? Don't forget to add a unit test for your function as well!
-- Remove the `volatile` keyword from the original smarter_arithmetic sum and rerun. What happens? Why?
+- Remove the `volatile` keyword from the original arithmetic sum and rerun. What happens? Why?
 
 > Given that the input to the arithmetic sum is *N*, what algorithmic complexity is your version, and what is mine?
 
